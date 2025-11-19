@@ -8,11 +8,7 @@ resource "aws_insatnce" "demo-ec2-instance" {
    }
 }
 
-variable "instance_type" {
-    default = "t3.micro"
-    description = "EC2 VM instance type"
-    type = string
-}
+
 
 output "ec2_instance_publicip" {
     description = "EC2 instance Public IP"
