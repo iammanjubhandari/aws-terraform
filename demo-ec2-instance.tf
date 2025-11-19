@@ -36,6 +36,10 @@ variable "instance_type" {
     type = string
 }
 
+output "ec2_instance_publicip" {
+    description = "EC2 instance Public IP"
+    value = aws_insatnce.demo-ec2-instance.public_ip 
+}
 
 
 
