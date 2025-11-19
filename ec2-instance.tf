@@ -9,7 +9,7 @@ resource "aws_insatnce" "demo-ec2-instance" {
 }
 
 variable "instance_type" {
-    default = "t2.micro"
+    default = "t3.micro"
     description = "EC2 VM instance type"
     type = string
 }
