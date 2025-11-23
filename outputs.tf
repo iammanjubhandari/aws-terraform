@@ -23,4 +23,8 @@ output "for_output_map1" {
     value = [for instance in aws_instance.demo-ec2-instance :instance.id => instance.public_dns ]  
 }
 
+output "for_output_maps2" {
+    description = "For loop with map - Advanced"
+    value = [for c, instance in aws_instance.demo-ec2-instance: c => instance.public_dns]
+}
 
