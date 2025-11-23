@@ -1,8 +1,11 @@
 resource "aws_insatnce" "demo-ec2-instance" {
-    ami = "ami-02b8269d5e85954ef"
+   # ami = "ami-02b8269d5e85954ef"
    # instance_type = "t2.micro"
+   ami = data.aws_ami.amzlinux2.id
    instance_type = var.instance_type
    user_data = file("$path{path.module}/app1-install.sh")
+   key_name = var.instance_keypair
+   vpc_secuirty_group_ids = [aws_security_group.vpc-ssh.id, aws_security_group.vpc-web.id]
    tags = {
     "Name" = "DEMO EC2 instance"
    }
