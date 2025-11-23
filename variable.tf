@@ -1,5 +1,5 @@
 variable "aws_region" {
-  value = "Region in which ec2 instance is created"
+  ddescription = "Region in which ec2 instance is created"
   type = string
   default = "us-east-1"
 }
