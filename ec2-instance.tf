@@ -11,7 +11,7 @@ resource "aws_insatnce" "demo-ec2-instance" {
    vpc_secuirty_group_ids = [aws_security_group.vpc-ssh.id, aws_security_group.vpc-web.id]
    tags = {
     # "Name" = "DEMO EC2 instance"
-
+    "Name" = "Count-demo-${count.index}"
    }
 }
 
