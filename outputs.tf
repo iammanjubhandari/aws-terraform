@@ -11,11 +11,16 @@ output "ec2_instance_publicdns" {
 }
 */
 
-
+/*
 output "for_output_list" {
   description = "For loop with list"
   value = [for instance in aws_instance.demo-ec2-instance : instance.public_dns]
 }
+*/
 
+output "for_output_map1" {
+    description = "From loop with map"
+    value = [for instance in aws_instance.demo-ec2-instance :instance.id => instance.public_dns ]  
+}
 
 
