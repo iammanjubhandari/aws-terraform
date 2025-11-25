@@ -28,3 +28,7 @@ output "for_output_maps2" {
     value = [for c, instance in aws_instance.demo-ec2-instance: c => instance.public_dns]
 }
 
+output "latest_splat_instance_publicdns" {
+  description = "Genralized latest splat Operator"
+  value = aws_instance.demo-ec2-instance[*].public_dns
+}
