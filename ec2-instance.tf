@@ -1,3 +1,10 @@
+data "aws_availability_zone" "my_azones" {
+   filter {
+     name = "opt-in-status"
+     values = [ "opt-in-not-required" ]
+   }
+}
+
 resource "aws_insatnce" "demo-ec2-instance" {
    # ami = "ami-02b8269d5e85954ef"
    # instance_type = "t2.micro"
