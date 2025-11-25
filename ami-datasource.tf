@@ -11,10 +11,12 @@ data "aws_ami" "amzlinux2" {
     name = "root-device-type"
     values = ["ebs"]
   }
+  
   filter {
     name = "virtualization-type"
     value = ["hvm"]
   }
+
   filter {
     name = "architecture"
     values = [ "x86_64" ]

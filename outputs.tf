@@ -1,3 +1,9 @@
+output "instance_publicip" {
+  description = "Ec2 instance public IP"
+  
+  
+}
+
 /*
 output "ec2_instance_publicip" {
     description = "EC2 instance Public IP"
@@ -18,6 +24,7 @@ output "for_output_list" {
 }
 */
 
+/*
 output "for_output_map1" {
     description = "From loop with map"
     value = [for instance in aws_instance.demo-ec2-instance :instance.id => instance.public_dns ]  
@@ -32,3 +39,5 @@ output "latest_splat_instance_publicdns" {
   description = "Genralized latest splat Operator"
   value = aws_instance.demo-ec2-instance[*].public_dns
 }
+
+*/

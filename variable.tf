@@ -4,11 +4,19 @@ variable "aws_region" {
   default = "us-east-1"
 }
 
+variable "instance_type" {
+  description = "Ec2 instance type"
+  type = string
+  default = "t3.micro"
+}
+
+/*
 variable "instance_type_list" {
     description = "EC2 VM instance type"
      type = list(string)
     default = ["t3.micro" , "t3.small" ]
 }
+
 
 variable "instance_type_map" {
   description = "Ec2 Instance type"
@@ -19,6 +27,7 @@ variable "instance_type_map" {
     "prod" = "t3.large"
   }
 }
+*/
 
 variable "instance_keypair" {
   description = "Key pair to create ec2 instance"
