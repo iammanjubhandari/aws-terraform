@@ -8,7 +8,12 @@ output "instance_publicip" {
 output "instance_publicdns" {
   description = "Ec2 instance Public DNS"
   value = aws_instance.demo-ec2-instance.*.public_dns
-  
+  value = aws_instance.demo-ec2-instance.[*].public_dns
+  value = toset([for instance in aws_instance.demo-ec2-instance: instance.public_dns])
+}
+
+output "instance_publicdns2" {
+  value = tomap({for az, instance in aws_instance.demo-ec2-instance: az => instance.public.dns})
 }
 /*
 output "ec2_instance_publicip" {
