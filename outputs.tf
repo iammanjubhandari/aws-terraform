@@ -1,9 +1,15 @@
 output "instance_publicip" {
   description = "Ec2 instance public IP"
-  
-  
+  # value = aws_instance.demo-ec2-instance.*.public_ip
+  # value = aws_instance.demo-ec2-instance.[*].public_ip
+  value = toset([for instance in aws_instance.demo-ec2-instance: instance.public_ip])
 }
 
+output "instance_publicdns" {
+  description = "Ec2 instance Public DNS"
+  value = aws_instance.demo-ec2-instance.*.public_dns
+  
+}
 /*
 output "ec2_instance_publicip" {
     description = "EC2 instance Public IP"
