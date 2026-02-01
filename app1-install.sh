@@ -6,6 +6,7 @@ apt-get update -y
 
 apt-get install -y nginx
 
+New
 
 systemctl enable nginx
 systemctl start nginx

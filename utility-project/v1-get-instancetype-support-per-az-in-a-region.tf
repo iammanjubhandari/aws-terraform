@@ -10,3 +10,6 @@ data "aws_ec2_instance_type_offering" "my_ins_type1" {
   location_type = "availability-zone"
 }
 
+output "output_v1_1" {
+  value = data.aws_ec2_instance_type_offering.my_ins_type1.instance_types
+}
